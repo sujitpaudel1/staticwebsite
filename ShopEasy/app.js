@@ -1,19 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const products = [
-    { name: "Product 1", price: "$10" },
-    { name: "Product 2", price: "$20" },
-    { name: "Product 3", price: "$30" },
-  ];
+// Select the form element
+const form = document.getElementById("myForm");
 
-  const productsContainer = document.getElementById("products");
+// Add an event listener for form submission
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent form from submitting to allow dialog to appear
 
-  products.forEach((product) => {
-    const productElement = document.createElement("div");
-    productElement.className = "product";
-    productElement.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>${product.price}</p>
-        `;
-    productsContainer.appendChild(productElement);
-  });
+  // Display "Submitted Successfully" dialog box
+  alert("Your message was submitted successfully");
+
+  // Optionally, you can reset the form here
+  form.reset();
+
+  // If you want to submit the form after showing the dialog, you can do so like this:
+  // form.submit();  // Uncomment this line to actually submit the form after the alert
 });
